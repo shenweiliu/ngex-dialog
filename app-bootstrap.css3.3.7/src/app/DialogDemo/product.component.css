@@ -1,0 +1,21 @@
+/*No need for bs-css 3.3.7*/
+/*.form-control {
+    height: 3rem;
+    width: 20rem;
+    padding: 0.5rem 0.35rem;
+}*/
+
+.form-group {
+    margin-left: 0;
+}
+
+.form-group.low-bottom {
+    /*bootstrap.js sets 15px. low for last item.*/
+    margin-bottom: 0.5rem;
+}
+
+.label-adjust {
+    padding: 0.25rem 0 0 1rem;
+    font-weight: normal;
+    width: 35%;
+}
