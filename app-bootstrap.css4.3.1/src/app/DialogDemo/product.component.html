@@ -1,0 +1,44 @@
+﻿<div class="modal-content">
+    <div class="dialog-header">    
+        <button type="button" class="close" [focus-blur]="'focus_blur'" (click)="cancel()">&times;</button>
+        <h4 class="dialog-title">{{ productDialogTitle }}</h4>
+    </div>
+    <form class="form-horizontal" name="productForm" id="frmProduct" novalidate>
+        <div class="dialog-body">
+            <div class="form-group row">               
+                <label for="txtProductName" class="label-adjust">Product Name</label>
+                <input type="text" class="form-control" id="txtProductName" name="txtProductName"
+                        [(ngModel)]="model.product.ProductName" required maxlength="50" 
+                        (focus)="setDrag(true)" (blur)="setDrag(false)" />  
+            </div>
+            <div class="form-group row">
+                <label for="txtCategory" class="label-adjust">Category</label>
+                <input type="text" class="form-control" id="txtCategory" name="txtCategory"
+                       [(ngModel)]="model.product.Category" required 
+                       (focus)="setDrag(true)" (blur)="setDrag(false)" />
+            </div>
+            <div class="form-group row">
+                <label for="txtUnitPrice" class="label-adjust">Unit Price ($)</label>
+                <input type="number" class="form-control" id="txtUnitPrice" name="txtUnitPrice"
+                       [(ngModel)]="model.product.UnitPrice" required max="10000" 
+                       (focus)="setDrag(true)" (blur)="setDrag(false)" />
+            </div>
+            <div class="form-group row">
+                <label for="txtStatus" class="label-adjust">Status</label>
+                <input type="text" class="form-control" id="txtStatus" name="txtStatus"
+                       [(ngModel)]="model.product.ProductStatus" 
+                       (focus)="setDrag(true)" (blur)="setDrag(false)" />
+            </div>
+            <div class="form-group row low-bottom">
+                <label for="txtAvailableSince" class="label-adjust">Available Since</label>
+                <input type="text" class="form-control" id="txtAvailableSince" name="txtAvailableSince"
+                       [(ngModel)]="model.product.AvailableSince" 
+                       (focus)="setDrag(true)" (blur)="setDrag(false)" />
+            </div>
+        </div>
+        <div class="dialog-buttons dialog-footer">
+            <button type="button" class="dialog-button dialog-button-secondary" (click)="cancel()">Cancel</button>
+            <button type="button" class="dialog-button dialog-button-primary" (click)="saveProduct()">&#160;Save&#160;</button>
+        </div>
+    </form>
+</div>
