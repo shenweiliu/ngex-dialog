@@ -1,0 +1,16 @@
+﻿.form-control {
+    height: 2rem;
+    width: 15rem;
+    padding: 0rem 0.35rem;
+}
+
+.form-group.low-bottom {
+    /*bootstrap.js sets 15px. low for last item.*/
+    margin-bottom: 0.5rem;
+}
+
+.label-adjust {
+    padding: 0.25rem 0 0 1rem;
+    font-weight: normal;
+    width: 35%;
+}
