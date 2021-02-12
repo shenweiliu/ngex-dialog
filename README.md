@@ -1,6 +1,6 @@
 # ngex-dialog
 
-The source code of the modal dialog service library and demo application for the Angular `ngex-dialog` that is published to the [npm](https://www.npmjs.com/package/ngex-dialog). 
+The `ngex-dialog` is published on the [npm](https://www.npmjs.com/package/ngex-dialog). 
 
 ## Installation
 
