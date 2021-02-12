@@ -18,6 +18,7 @@
     "@angular/platform-browser-dynamic": "11.0.5",
     "@angular/router": "11.0.5",
     "rxjs": "6.6.3",
+    "ngex-dialog": "^11.0.5",
     "bootstrap": "3.3.7",
     "font-awesome": "4.7.0",
     "tslib": "2.0.3",
