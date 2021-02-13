@@ -1,7 +1,7 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "outDir": "../ang_cli_dist/out-tsc/app",
+    "outDir": "../ang_dist/out-tsc/app",
     "types": []
   },
   "exclude": [
