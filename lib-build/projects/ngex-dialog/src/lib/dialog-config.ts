@@ -1,4 +1,4 @@
-﻿import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 
 @Injectable()
 export class NgExDialogConfig { 
@@ -7,16 +7,16 @@ export class NgExDialogConfig {
         //Please see properties of calling parameter object in dialog.component.ts.
 
         //App level settings ----------------
-        topOffset: 50, //pix nubmer.
+        //Dialog min pix space to screen top.
+        topOffset: 50, 
         draggable: true,
         moveCursor: 'default', //'move' or 'default'.
         
         //Animation fade-in time is set in bootstrap.css by default (0.3s).
-        //You can overwrite the value in dialog-main.component.css.
+        //You can overwrite the value in caller application ex-dialog.css.
         animation: true,
-
-        //Dialog level settings --------------------
-        //Background color can also be set in dialog-main.component.css.
+                
+        //Background color intensity can be set from client CSS.
         grayBackground: true,
         width: '40%',
 
@@ -94,6 +94,5 @@ export class NgExDialogConfig {
 
     constructor() {
         this.merged = this.defaults;        
-    } 
-    
+    }
 }

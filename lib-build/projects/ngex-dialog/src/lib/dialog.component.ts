@@ -1,10 +1,10 @@
-import { Component, OnDestroy } from "@angular/core";
-import { Observable, Observer } from "rxjs";
-import { DialogMainComponent } from "./dialog-main.component";
-import { DialogService } from "./dialog.service";
+import { Component, OnDestroy } from '@angular/core';
+import { Observable, Observer } from 'rxjs';
+import { DialogMainComponent } from './dialog-main.component';
+import { DialogService } from './dialog.service';
 
 //@Component({
-//    selector: "dialog-component"
+//    selector: 'dialog-component'
 //})
 export abstract class DialogComponent {
 
@@ -86,10 +86,10 @@ export abstract class DialogComponent {
         //Callback function for cases when this.result has value.        
         let callBackResult: any;
         if (this.result !== undefined) {
-            if (this.result == false && this.beforeCloseCallback && typeof this.beforeCloseCallback === "function") {
+            if (this.result == false && this.beforeCloseCallback && typeof this.beforeCloseCallback === 'function') {
                 callBackResult = this.beforeCloseCallback.call(this);
             }
-            else if (this.result == true && this.beforeActionCallback && typeof this.beforeActionCallback === "function") {
+            else if (this.result == true && this.beforeActionCallback && typeof this.beforeActionCallback === 'function') {
                 callBackResult = this.beforeActionCallback.call(this);
             }
             else {
@@ -101,7 +101,7 @@ export abstract class DialogComponent {
             if (callBackResult !== undefined && callBackResult == true) {
                 this.closeDialog();
             }
-            else if (callBackResult && typeof callBackResult === "object") {
+            else if (callBackResult && typeof callBackResult === 'object') {
                 callBackResult.subscribe((result) => {
                     if (result) {
                         this.closeDialog();

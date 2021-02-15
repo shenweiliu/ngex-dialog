@@ -11,24 +11,24 @@ export class DialogIconDirective implements AfterViewInit {
     
     ngAfterViewInit() {        
         setTimeout(() => {
-            let cssClass: string = "";
+            let cssClass: string = '';
             switch (this.option) {
-                case "info":
-                    cssClass = "dialog-icon-info";
+                case 'info':
+                    cssClass = 'dialog-icon-info';
                     break;
-                case "warning":
-                    cssClass = "dialog-icon-warning";
+                case 'warning':
+                    cssClass = 'dialog-icon-warning';
                     break;
-                case "error":
-                    cssClass = "dialog-icon-error";
+                case 'error':
+                    cssClass = 'dialog-icon-error';
                     break;
-                case "question":
-                    cssClass = "dialog-icon-question";
+                case 'question':
+                    cssClass = 'dialog-icon-question';
                     break;                
                 default:
                    break;
             }
-            if (cssClass != "")
+            if (cssClass != '')
                 this.renderer.addClass(this.element.nativeElement, cssClass);
         }, 100);        
     }

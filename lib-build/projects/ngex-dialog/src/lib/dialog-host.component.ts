@@ -1,16 +1,16 @@
-import { Component, ViewChild, ViewContainerRef, ComponentFactoryResolver, ReflectiveInjector, Type} from "@angular/core";
-import { DialogComponent } from "./dialog.component";
-import { DialogMainComponent } from "./dialog-main.component";
-import { Observable } from "rxjs";
+import { Component, ViewChild, ViewContainerRef, ComponentFactoryResolver, ReflectiveInjector, Type} from '@angular/core';
+import { DialogComponent } from './dialog.component';
+import { DialogMainComponent } from './dialog-main.component';
+import { Observable } from 'rxjs';
 
 @Component({
-    selector: "dialog-host",
-    template: "<template #element></template>"    
+    selector: 'dialog-host',
+    template: '<template #element></template>'    
 })
 export class DialogHostComponent {
     
     //Target element to insert dialogs.    
-    @ViewChild("element", {static: true, read: ViewContainerRef}) private element: ViewContainerRef;
+    @ViewChild('element', {static: true, read: ViewContainerRef}) private element: ViewContainerRef;
 
     //Array to hold multiple dialogs.
     dialogs: Array<DialogComponent> = [];    
@@ -26,7 +26,7 @@ export class DialogHostComponent {
         let componentRef = this.element.createComponent(factory, index);
         let dialogMain: DialogMainComponent = <DialogMainComponent> componentRef.instance;
         let _component: DialogComponent = dialogMain.addComponent(component);
-        if (typeof (index) !== "undefined") {
+        if (typeof (index) !== 'undefined') {
             this.dialogs.splice(index, 0, _component);
         }
         else {
@@ -52,10 +52,10 @@ export class DialogHostComponent {
         //Check and preform callback for dialogs without result value - mostly custom dialogs.
         if (component.result == undefined) {
             let callBackResult: any;
-            if (component.beforeCloseCallback && typeof component.beforeCloseCallback === "function") {
+            if (component.beforeCloseCallback && typeof component.beforeCloseCallback === 'function') {
                 callBackResult = component.beforeCloseCallback.call(component);
             }
-            else if (component.beforeActionCallback && typeof component.beforeActionCallback === "function") {
+            else if (component.beforeActionCallback && typeof component.beforeActionCallback === 'function') {
                 callBackResult = component.beforeActionCallback.call(component);
             }
             else {
@@ -68,7 +68,7 @@ export class DialogHostComponent {
             if (callBackResult !== undefined && callBackResult == true) {
                 this.removeDialogNow(component, delayMs);
             }
-            else if (callBackResult && typeof callBackResult === "object") {
+            else if (callBackResult && typeof callBackResult === 'object') {
                 callBackResult.subscribe((result) => {
                     if (result) {
                         this.removeDialogNow(component, delayMs);

@@ -12,10 +12,10 @@ export class FocusBlurDirective implements AfterViewInit {
     ngAfterViewInit() {        
         let pThis: any = this;
         setTimeout(() => {
-            if (pThis.option == "focus" || pThis.option == "focus_blur") {
+            if (pThis.option == 'focus' || pThis.option == 'focus_blur') {
                 pThis.element.nativeElement.focus();
             }
-            if (pThis.option == "blur" || pThis.option == "focus_blur") {
+            if (pThis.option == 'blur' || pThis.option == 'focus_blur') {
                 pThis.element.nativeElement.blur();
             }
         }, 10);        

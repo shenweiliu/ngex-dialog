@@ -1,8 +1,8 @@
-import { Injectable, Injector, Type } from "@angular/core";
-import { DialogService } from "./dialog.service";
-import { DialogComponent } from "./dialog.component";
-import { BasicDialogComponent } from "./basic-dialog.component";
-import { Observable } from "rxjs";
+import { Injectable, Injector, Type } from '@angular/core';
+import { DialogService } from './dialog.service';
+import { DialogComponent } from './dialog.component';
+import { BasicDialogComponent } from './basic-dialog.component';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class ExDialog {
@@ -11,25 +11,25 @@ export class ExDialog {
     
     openMessage(param: any, title?: string, icon?: string) {
         let params: any = this.getParams(param, title, icon);
-        params.basicType = "message";
+        params.basicType = 'message';
         this.dialogService.addDialog(BasicDialogComponent, params);
     }
     
     openConfirm(param: any, title?: string, icon?: string): Observable<any> {
         let params: any = this.getParams(param, title, icon);
-        params.basicType = "confirm";
+        params.basicType = 'confirm';
         return this.dialogService.addDialog(BasicDialogComponent, params);
     }
 
     private getParams(param: any, title?: string, icon?: string): any {
         let params: any = {};
-        if (param && typeof param === "string") {
+        if (param && typeof param === 'string') {
             //Sigle line inputs.
             params.message = param;
-            if (title != undefined && title != "") params.title = title;
-            if (icon != undefined && icon != "") params.icon = icon;
+            if (title != undefined && title != '') params.title = title;
+            if (icon != undefined && icon != '') params.icon = icon;
         }
-        else if (param && typeof param === "object") {
+        else if (param && typeof param === 'object') {
             params = param;
         }
         return params;
@@ -37,7 +37,7 @@ export class ExDialog {
 
     //Open custom or data dialog by passing custom dialog component and parameters.
     openPrime(component: Type<DialogComponent>, params?: any): Observable<any> {
-        params.basicType = "prime";
+        params.basicType = 'prime';
         return this.dialogService.addDialog(component, params);
     } 
     

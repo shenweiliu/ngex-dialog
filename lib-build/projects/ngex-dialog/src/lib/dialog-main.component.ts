@@ -1,10 +1,10 @@
-import { Component, ViewContainerRef, ViewChild, ComponentFactoryResolver, ReflectiveInjector, Type, HostListener, ElementRef, OnInit } from "@angular/core";
-import { DialogComponent } from "./dialog.component";
-import { AlignmentDirective } from "./alignment.directive";
-import { NgExDialogConfig } from "./dialog-config";
+import { Component, ViewContainerRef, ViewChild, ComponentFactoryResolver, ReflectiveInjector, Type, HostListener, ElementRef, OnInit } from '@angular/core';
+import { DialogComponent } from './dialog.component';
+import { AlignmentDirective } from './alignment.directive';
+import { NgExDialogConfig } from './dialog-config';
 
 @Component({    
-    selector: "dialog-main",
+    selector: 'dialog-main',
     template: `<div class="dialog-frame dialog-fade" [ngClass]="{'in': shown, 'dialog-backgray': isGrayBackground}" 
      role="dialog" (click)="clickOutside($event)" >
     <div class="dialog-main" [ngClass]="{'dialog-no-animation': !isAnimation}" [style.width]="dialogWidth" 
@@ -28,7 +28,7 @@ export class DialogMainComponent implements OnInit {
     { }
 
     ngOnInit(): void {
-        if (this.content.basicType == "prime") {
+        if (this.content.basicType == 'prime') {
             this.alignmentDirective.isPrimeType = true;
         }
         //Set for start position based on cursor point if used.
@@ -97,23 +97,23 @@ export class DialogMainComponent implements OnInit {
 
         //For basic type dialogs only.
         if (this.content.showIcon == undefined && !this.content.showIcon) this.content.showIcon = this.config.showIcon;
-        if (this.content.basicType == "message") {
+        if (this.content.basicType == 'message') {
             if (this.content.title == undefined) this.content.title = this.config.messageTitle;
             if (this.content.showIcon)
-                if (this.content.icon == undefined || this.content.icon == "") this.content.icon = this.config.messageIcon;
-            if (this.content.closeButtonLabel == undefined || this.content.closeButtonLabel == "") {
+                if (this.content.icon == undefined || this.content.icon == '') this.content.icon = this.config.messageIcon;
+            if (this.content.closeButtonLabel == undefined || this.content.closeButtonLabel == '') {
                 this.content.closeButtonLabel = this.config.messageCloseButtonLabel;
                 //Use action button pattern if no value for closeButtonLabel.
-                if ((this.content.closeButtonLabel == undefined || this.content.closeButtonLabel == "") &&
+                if ((this.content.closeButtonLabel == undefined || this.content.closeButtonLabel == '') &&
                     this.content.actionButtonLabel == undefined) {
                     this.content.actionButtonLabel = this.config.messageActionButtonLabel;
                 }
             }
         }
-        else if (this.content.basicType == "confirm") {
+        else if (this.content.basicType == 'confirm') {
             if (this.content.title == undefined) this.content.title = this.config.confirmTitle;
             if (this.content.showIcon)
-                if (this.content.icon == undefined || this.content.icon == "") this.content.icon = this.config.confirmIcon;
+                if (this.content.icon == undefined || this.content.icon == '') this.content.icon = this.config.confirmIcon;
             if (this.content.actionButtonLabel == undefined) this.content.actionButtonLabel = this.config.confirmActionButtonLabel;
             if (this.content.closeButtonLabel == undefined) this.content.closeButtonLabel = this.config.confirmCloseButtonLabel;
         }

@@ -1,7 +1,7 @@
-import { Injectable, ComponentFactoryResolver, ApplicationRef, Injector, EmbeddedViewRef, Type } from "@angular/core";
-import { DialogHostComponent } from "./dialog-host.component";
-import { DialogComponent } from "./dialog.component";
-import { Observable } from "rxjs";
+import { Injectable, ComponentFactoryResolver, ApplicationRef, Injector, EmbeddedViewRef, Type } from '@angular/core';
+import { DialogHostComponent } from './dialog-host.component';
+import { DialogComponent } from './dialog.component';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class DialogService  {
@@ -59,8 +59,8 @@ export class DialogService  {
         let componentRootNode = (componentRef.hostView as EmbeddedViewRef<any>).rootNodes[0] as HTMLElement;
 
         //SW 1/14/2018 Change for Angular 5
-        //let componentRootViewConainer = this.applicationRef["_rootComponents"][0]; //Angular 4
-        let componentRootViewConainer = this.applicationRef["components"][0];
+        //let componentRootViewConainer = this.applicationRef['_rootComponents'][0]; //Angular 4
+        let componentRootViewConainer = this.applicationRef['components'][0];
 
         let rootLocation: Element = (componentRootViewConainer.hostView as EmbeddedViewRef<any>).rootNodes[0] as HTMLElement;
         this.applicationRef.attachView(componentRef.hostView);
