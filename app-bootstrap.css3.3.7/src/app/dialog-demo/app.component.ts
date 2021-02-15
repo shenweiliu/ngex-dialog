@@ -1,6 +1,7 @@
 import { Component, HostListener, ViewChild, ElementRef, OnInit, Renderer2 } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
-import { ExDialog } from "ngex-dialog";
+import { ExDialog, NgExDialogConfig } from "ngex-dialog";
+import { DialogConfig } from './app.config';
 import { SideMenuComponent } from "./side-menu.component";
 import { filter, pairwise } from 'rxjs/operators'; 
 
@@ -14,11 +15,15 @@ export class AppComponent implements OnInit {
     @ViewChild(SideMenuComponent, { static: true }) sideMenuComponent: SideMenuComponent;
     @ViewChild("barButton", { static: true }) barButton: ElementRef; 
 
-    constructor(private router: Router, private exDialog: ExDialog, private renderer: Renderer2) {        
+    constructor(private router: Router, private exDialog: ExDialog, private ngExDialogConfig: NgExDialogConfig, private renderer: Renderer2) {        
     }
 
     ngOnInit() {
         let pThis: any = this;
+
+        //Merge config items.
+        this.ngExDialogConfig.appConfig = DialogConfig;               
+
         //value[0]: old route; value[1]: new route.
         this.router.events.pipe(
             filter(value => value instanceof NavigationEnd),

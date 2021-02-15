@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ExDialog } from "ngex-dialog"; 
+import { ExDialog } from "ngex-dialog";
 
 @Component({
     moduleId: module.id.toString(),
