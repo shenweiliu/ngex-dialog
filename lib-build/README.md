@@ -1,23 +1,27 @@
-# ngex-dialog
+# LibBuild
 
-This is a modal dialog service library for applications with Angular versions 8 - 11. The libray was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.1. It still uses the ViewEngine, instead of Ivy Partial option for the build due to some errors for the build with the latter option.
 
-## Installation
+## Development server
 
-Run `npm install ngex-dialog` to add the library into your project directory.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Demo Application
+## Code scaffolding
 
-The source code can be downloaded from the [github repository](https://github.com/shenweiliu/ngex-dialog).
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Details and Use Cases
+## Build
 
-To see how to use the dialog in details, please go check out the article [An Angular Modal Dialog with Advanced Functionality and Easy-use Features](https://www.codeproject.com/Articles/1179258/An-Angular-Modal-Dialog-with-Advanced-Functionalit).
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-The sample application directly uses the TypeScript code of the NgExDialog modules and components, not the library as downloaded here, but the use cases and workflow are the same. 
+## Running unit tests
 
-## Notes on Styles
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-The dialog depends on the bootstrap css library. The dialog supports the *bootstrap.css* versions 3.3.7 to 4.3.1. You can add the `bootstrap` into your package.json file, for example `"bootstrap": "4.3.1"`, and then update the `node_modules`. 
+## Running end-to-end tests
 
-The *ex-dialog.css* file containing all base style settings for the dialog is not included in the installed library. You may need to have it under the *app-bootstrap.css{verion}/src/assets/css* folder from the [github repository](https://github.com/shenweiliu/ngex-dialog). The icon images for the basic-type dialogs can also be downloaded there.
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

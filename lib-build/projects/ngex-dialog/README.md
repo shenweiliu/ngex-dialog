@@ -1,6 +1,6 @@
-# ngex-dialog
+# NgexDialog
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.9.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.1. It still uses the ViewEngine, instead of Ivy Partial option for the build due to some errors for the build with the latter option.
 
 ## Code scaffolding
 
@@ -13,7 +13,7 @@ Run `ng build ngex-dialog` to build the project. The build artifacts will be sto
 
 ## Publishing
 
-After building your library with `ng build ng-ex-dialog`, go to the dist folder `cd dist/ngex-dialog` and run `npm publish`.
+After building your library with `ng build ngex-dialog`, go to the dist folder `cd dist/ngex-dialog` and run `npm publish`.
 
 ## Running unit tests
 

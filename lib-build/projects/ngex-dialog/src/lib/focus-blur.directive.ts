@@ -7,7 +7,7 @@ export class FocusBlurDirective implements AfterViewInit {
     constructor(private element: ElementRef) {
     }
     //Set focus as default.
-    @Input('focus-blur') option: string;
+    @Input('focus-blur') option: string = '';
     
     ngAfterViewInit() {        
         let pThis: any = this;

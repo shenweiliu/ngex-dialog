@@ -8,71 +8,73 @@ import { DialogService } from './dialog.service';
 //})
 export abstract class DialogComponent {
 
-    private observer: Observer<any>;
-    result: any;
-    dialogMain: DialogMainComponent;    
-    dialogCallback: any;
+    private observer!: Observer<any>;
+    result!: any;
+    dialogMain!: DialogMainComponent;    
+    dialogCallback!: any;
 
     //For passing caller request data items to current dialog component.
-    callerData: any;
+    callerData!: any;
 
     //Set position based on cursor point if used.
     initElement: any = undefined;
-    h_Offset: number = undefined;
-    v_Offset: number = undefined;
+    h_Offset: number = 0;
+    v_Offset: number = 0;
     //Alternatives for IE 11 which not support scrollX and scrollY.
-    h_event: number = undefined; 
-    v_event: number = undefined;
+    h_event: number = 0; 
+    v_event: number = 0;
     //End of Set position.
 
     //Declared for any component-level custom setting used by TypeScript.
     //Component-level values will be passed from original callers.
-    width: string = undefined;    
-    grayBackground: boolean = undefined;
-    animation: boolean = undefined; 
-    draggable: boolean = undefined; 
-    topOffset: number = undefined;
-    closeDelay: number = undefined;
-    closeDelayParent: number = undefined;
-    closeByClickOutside: boolean = undefined;
-    closeByEnter: boolean = undefined;
-    closeByEscape: boolean = undefined;
-    closeAllDialogs: boolean = undefined;
-    closeImmediateParent: boolean = undefined;    
-    keepOpenForAction: boolean = undefined;
-    keepOpenForClose: boolean = undefined;
+    width: string = '0';    
+    grayBackground: boolean = false;
+    animation: boolean = false;
+    draggable: boolean = false;
+    topOffset: number = 0;
+    closeDelay: number = 0;
+    closeDelayParent: number = 0;
+    closeByClickOutside: boolean = false;
+    closeByEnter: boolean = false;
+    closeByEscape: boolean = false;
+    closeAllDialogs: boolean = false;
+    closeImmediateParent: boolean = false;
+    keepOpenForAction: boolean = false;
+    keepOpenForClose: boolean = false;
     beforeActionCallback: any = undefined;
     beforeCloseCallback: any = undefined;
 
     //For basic type dialogs only.
-    title: string = undefined;
-    showIcon: boolean = undefined;
-    icon: string = undefined;
-    actionButtonLabel: string = undefined;
-    closeButtonLabel: string = undefined; 
-    dialogAddClass: string = undefined;
-    headerAddClass: string = undefined;
-    titleAddClass: string = undefined;
-    bodyAddClass: string = undefined;
-    messageAddClass: string = undefined;
-    footerAddClass: string = undefined;
-    actionButtonAddClass: string = undefined;
-    closeButtonAddClass: string = undefined;
+    title: string = '';
+    showIcon: boolean = false;
+    icon: string = '';
+    actionButtonLabel: string = '';
+    closeButtonLabel: string = '';
+    dialogAddClass: string = '';
+    headerAddClass: string = '';
+    titleAddClass: string = '';
+    bodyAddClass: string = '';
+    messageAddClass: string = '';
+    footerAddClass: string = '';
+    actionButtonAddClass: string = '';
+    closeButtonAddClass: string = '';
 
     //Basic dialog type flag (internal use). 
     //Value is set in ExDialog service and used in BasicDialogComponent and DialogMainComponent.
-    basicType: string = undefined;
+    basicType: string = '';
 
     constructor(protected dialogService: DialogService) { }
 
     //Set input parameters to component properties.
-    fillData(data: any = {}): Observable<any> {
+    fillData(data: any = {}): Observable<object> {
+        //Angular 12 CLI: Need to declare "this" as object type for fixing error "No index signature with a parameter of type 'string' was found on type 'DialogComponent'".
+        let pThis: Record<string, any> = this;
         let keys: string[] = Object.keys(data);
-        for (let idx = 0, length = keys.length; idx < length; idx++) {
+        for (let idx: number = 0, length: number = keys.length; idx < length; idx++) {
             let key: string = keys[idx];
-            this[key] = data[key];
+            pThis[key] = data[key];
         }
-        return Observable.create((observer) => {
+        return Observable.create((observer: any) => {
             this.observer = observer;
             return () => {
                 this.dialogResult();
@@ -84,7 +86,7 @@ export abstract class DialogComponent {
     dialogResult(): void {
         
         //Callback function for cases when this.result has value.        
-        let callBackResult: any;
+        let callBackResult!: any;
         if (this.result !== undefined) {
             if (this.result == false && this.beforeCloseCallback && typeof this.beforeCloseCallback === 'function') {
                 callBackResult = this.beforeCloseCallback.call(this);
@@ -102,7 +104,7 @@ export abstract class DialogComponent {
                 this.closeDialog();
             }
             else if (callBackResult && typeof callBackResult === 'object') {
-                callBackResult.subscribe((result) => {
+                callBackResult.subscribe((result: any) => {
                     if (result) {
                         this.closeDialog();
                     }

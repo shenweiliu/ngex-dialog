@@ -7,7 +7,7 @@ export class DialogIconDirective implements AfterViewInit {
     constructor(private element: ElementRef, private renderer: Renderer2) {
     }
     
-    @Input('dialog-icon') option: string;
+    @Input('dialog-icon') option: string = '';
     
     ngAfterViewInit() {        
         setTimeout(() => {

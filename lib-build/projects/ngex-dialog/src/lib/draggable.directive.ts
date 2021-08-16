@@ -1,6 +1,5 @@
 import { Directive, HostListener, ElementRef, Input, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DialogMainComponent } from "./dialog-main.component";
 import { NgExDialogConfig } from "./dialog-config";
 import { DialogCache } from "./dialog-cache";
 
@@ -10,12 +9,12 @@ import { DialogCache } from "./dialog-cache";
 export class DraggableDirective implements AfterViewInit {
     startX: number = 0;
     startY: number = 0;
-    md: boolean;
+    md: boolean = false;
 
     constructor(private element: ElementRef, private ngExDialogConfig: NgExDialogConfig) {
     }
 
-    @Input('ng2-draggable') isDraggable: boolean;
+    @Input('ng2-draggable') isDraggable: boolean = false;
 
     ngAfterViewInit() {
         let pThis: any = this;
@@ -44,8 +43,12 @@ export class DraggableDirective implements AfterViewInit {
         if (this.md && this.isDraggable && !DialogCache.noDrag) {
             //DialogCache.noDrag for mouse on input elements.
             //Disable element/text selection.
-            window.getSelection().removeAllRanges();
-                        
+            //Angular 12 CLI Ivy partial compilation: resolve TypeScript error "Object is possibly 'null'.
+            let rtn: any = window.getSelection();
+            if (rtn !== null) {
+                rtn.removeAllRanges();
+            }
+
             this.element.nativeElement.style.top = (event.clientY - this.startY) + 'px';
             this.element.nativeElement.style.left = (event.clientX - this.startX) + 'px';
         }        

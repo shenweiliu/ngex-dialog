@@ -6,8 +6,8 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class DialogService  {
 
-    dialogs: any; 
-    private dialogHostComponent : DialogHostComponent;
+    dialogs!: any; 
+    private dialogHostComponent!: DialogHostComponent;
         
     constructor(private resolver: ComponentFactoryResolver, private applicationRef: ApplicationRef, private injector: Injector) {}
 
@@ -27,17 +27,13 @@ export class DialogService  {
     }
     
     //Hides and removes dialog from DOM    
-    removeDialog(component: DialogComponent, clearAll: boolean = false): void {      
+    removeDialog(component: DialogComponent): void {      
         if (!this.dialogHostComponent) {
             return;
         }
-
-        //Close all dialogs if clearAll flag is passed.
-        if (clearAll) {
-            this.dialogHostComponent.removeAllDialogs();
-        }
+                
         //Closing all dialogs.
-        else if (component.closeAllDialogs)
+        if (component.closeAllDialogs)
         {
             this.dialogHostComponent.removeAllDialogs();
         }
@@ -47,20 +43,24 @@ export class DialogService  {
         else {
             this.dialogHostComponent.removeDialog(component);
         }        
-    }    
+    }
+
+    removeAllDialogs(): void {
+        this.dialogHostComponent.removeAllDialogs();
+    }
 
     /**
     * Creates and add to DOM top-level dialog host component
     * @return {DialogHostComponent}
     */
     private createDialogHost(): DialogHostComponent {
-        let componentFactory = this.resolver.resolveComponentFactory(DialogHostComponent);
-        let componentRef = componentFactory.create(this.injector);
-        let componentRootNode = (componentRef.hostView as EmbeddedViewRef<any>).rootNodes[0] as HTMLElement;
+        let componentFactory: any = this.resolver.resolveComponentFactory(DialogHostComponent);
+        let componentRef: any = componentFactory.create(this.injector);
+        let componentRootNode: any = (componentRef.hostView as EmbeddedViewRef<any>).rootNodes[0] as HTMLElement;
 
         //SW 1/14/2018 Change for Angular 5
         //let componentRootViewConainer = this.applicationRef['_rootComponents'][0]; //Angular 4
-        let componentRootViewConainer = this.applicationRef['components'][0];
+        let componentRootViewConainer: any = this.applicationRef['components'][0];
 
         let rootLocation: Element = (componentRootViewConainer.hostView as EmbeddedViewRef<any>).rootNodes[0] as HTMLElement;
         this.applicationRef.attachView(componentRef.hostView);

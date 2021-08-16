@@ -14,7 +14,7 @@ export class AlignmentDirective implements OnInit {
     dialogPaddingTop: number = 0;
 
     topOffset: number = 0;    
-    isPrimeType: boolean;
+    isPrimeType: boolean = false;
     setPosition: any = {
         initElement: undefined,
         h_Offset: 0,

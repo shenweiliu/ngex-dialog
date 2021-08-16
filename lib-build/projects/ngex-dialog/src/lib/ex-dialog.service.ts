@@ -51,7 +51,7 @@ export class ExDialog {
     //    this.dialogService.removeDialog(dialogComponent, true)
     //} 
     clearAllDialogs() {
-        this.dialogService.removeDialog(undefined, true)
+        this.dialogService.removeAllDialogs();
     }    
 
     //Externally knowing existence of any open dialog.

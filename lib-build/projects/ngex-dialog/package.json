@@ -1,11 +1,11 @@
 {
   "name": "ngex-dialog",
-  "version": "11.0.5",
+  "version": "0.0.1",
   "peerDependencies": {
-    "@angular/common": "11.0.5",
-    "@angular/core": "11.0.5"
+    "@angular/common": "12.2.1",
+    "@angular/core": "12.2.1"
   },
   "dependencies": {
-    "tslib": "^2.0.0"
+    "tslib": "2.2.0"
   }
 }
