@@ -43,6 +43,11 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true
+            },
+            "development": {
+              "outputHashing": "none",
+              "sourceMap": true,
+              "vendorChunk": true
             }
           }
         },
