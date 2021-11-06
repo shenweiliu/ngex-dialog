@@ -14,7 +14,8 @@ export class BasicDialogComponent extends DialogComponent implements AfterViewIn
     constructor(dialogService: DialogService, private renderer: Renderer2) {
         super(dialogService);        
     }
-
+    
+    subType: string: = '';
     title: string = '';
     message: string = '';
     icon: string = '';
