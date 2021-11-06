@@ -45,6 +45,7 @@ export abstract class DialogComponent {
     beforeCloseCallback: any = undefined;
 
     //For basic type dialogs only.
+    subType: string: = '';
     title: string = '';
     showIcon: boolean = false;
     icon: string = '';
