@@ -38,13 +38,13 @@ export class AlignmentDirective implements OnInit {
     }
 
     SetCenter(event?: any, isInit?: boolean) {
-        let eventTarget = event == undefined ? window : event.target;
-        let wh = eventTarget.innerHeight;
-        let sx = eventTarget.scrollX;  //left invisible width when scroll right.
-        let sy = eventTarget.scrollY;  //Top invisible height when scroll down.
-        let ot = this.element.nativeElement.offsetTop;
-        let cho = this.element.nativeElement.offsetHeight;
-        let ch = this.element.nativeElement.offsetHeight - this.dialogPaddingTop; //Dialog visible height
+        let eventTarget: any = event == undefined ? window : event.target;
+        let wh: number = eventTarget.innerHeight;
+        let sx: number = eventTarget.scrollX;  //left invisible width when scroll right.
+        let sy: number = eventTarget.scrollY;  //Top invisible height when scroll down.
+        let ot: number = this.element.nativeElement.offsetTop;
+        let cho: number = this.element.nativeElement.offsetHeight;
+        let ch: number = this.element.nativeElement.offsetHeight - this.dialogPaddingTop; //Dialog visible height
 
         //IE doesn't support scrollY but it automatically scrolls back to the top 0 position.
         //The scrollY needs to be added for Google Chrome, Firefox, and Microsoft Edge.
@@ -84,6 +84,9 @@ export class AlignmentDirective implements OnInit {
             this.element.nativeElement.style.top = rstTop.toString() + 'px';             
         }
         else {
+            //Get topOffset config. Not needed - it's passed merged config value from dialog-main.component.ts
+            //this.topOffset = this.ngExDialogConfig.appConfig.topOffset;
+
             //For most dynamic filled content, offsetHeight is very small.
             if (this.isPrimeType) {
                 if (ch < 350) {

@@ -4,7 +4,7 @@ import { AlignmentDirective } from './alignment.directive';
 import { NgExDialogConfig } from './dialog-config';
 
 @Component({    
-    //moduleId: module.id.toString(),
+    moduleId: module.id.toString(),
     selector: 'dialog-main',
     templateUrl: 'dialog-main.component.html'
 })
@@ -41,7 +41,7 @@ export class DialogMainComponent implements OnInit {
                 v_event: this.content.v_event 
             };
         }
-        //Pass configured top offset value to alignmentDirective.
+        //Pass caller-provided or configured top offset value to alignmentDirective.
         this.alignmentDirective.topOffset = this.content.topOffset == undefined ? this.ngExDialogConfig.merged.topOffset : this.content.topOffset;
     }
 
@@ -65,7 +65,7 @@ export class DialogMainComponent implements OnInit {
     isGrayBackground: boolean = false;    
     isAnimation: boolean = false; 
     isDraggable: boolean = false;
-    topOffset: number = 0;
+    //topOffset: number = 0;
 
     show(): void {
         this.config = this.ngExDialogConfig.merged;

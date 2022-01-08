@@ -31,7 +31,8 @@ export abstract class DialogComponent {
     grayBackground: boolean = false;
     animation: boolean = false;
     draggable: boolean = false;
-    topOffset: number = 0;
+    //Setting value 0 is needed from caller so that default to unknown. 
+    topOffset!: number;
     closeDelay: number = 0;
     closeDelayParent: number = 0;
     closeByClickOutside: boolean = false;
@@ -45,7 +46,7 @@ export abstract class DialogComponent {
     beforeCloseCallback: any = undefined;
 
     //For basic type dialogs only.
-    subType: string: = '';
+    subType: string = '';
     title: string = '';
     showIcon: boolean = false;
     icon: string = '';
