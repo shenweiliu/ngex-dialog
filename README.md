@@ -4,7 +4,7 @@
 
 ## Installation
 
-Run `npm install ngex-dialog` to add the library into your project directory, or add `"ngex-dialog": "~19.0.1"` to the package.json file and then run `npm install` to update the existing package.
+Run `npm install ngex-dialog` to add the library into your project directory, or add `"ngex-dialog": "~19.0.3"` to the package.json file and then run `npm install` to update the existing package.
 
 ## Details and Use Cases
 
