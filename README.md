@@ -16,4 +16,4 @@ This folder contains the demo project that can be run in any platform with the r
 
 ## NgExDialog_AspNetCore
 
-It's the Visual Studio 2022 solution of the ASP.NET 8.0 website project containing the ngex-dialog demo. You need to do the `npm install` in the directory [NgExDialog_AspNetCore/SM.NgExDialog.Sample/wwwroot/angular-content] for the [node_modules] and then run the `ng build --configuration {your environment}` before starting the website. 
+It's the Visual Studio 2022 solution of the ASP.NET 8.0 website project containing the ngex-dialog demo. You need to do the `npm install` in the directory *NgExDialog_AspNetCore/SM.NgExDialog.Sample/wwwroot/angular-content* for the *node_modules* and then run the `ng build --configuration {your environment}` before starting the website. 
