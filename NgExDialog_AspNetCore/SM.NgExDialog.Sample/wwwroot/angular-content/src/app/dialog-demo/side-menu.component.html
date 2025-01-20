@@ -1,0 +1,18 @@
+<div class='main-nav nav-panel nav-panel-collapse collapse' #menuItems>           
+    <div class='nav-panel-brand'>        
+        <a [routerLink]="['/main']" (click)="menuItemClicked()">Menu Items</a>
+    </div>
+    <ul class='nav-list'>
+        <li [routerLinkActive]="['link-active']">
+            <a [routerLink]="['/main']" (click)="menuItemClicked()">
+                <span class='fa fa-home'></span> Main Sample
+            </a>
+        </li>
+        <li [routerLinkActive]="['link-active']">
+            <a [routerLink]="['/second']" (click)="menuItemClicked()">
+                <span class='fa fa-list'></span> Second Sample
+            </a>
+        </li>
+    </ul>       
+    <!--</div>-->    
+</div>
