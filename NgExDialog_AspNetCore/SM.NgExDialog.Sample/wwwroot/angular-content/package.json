@@ -22,7 +22,7 @@
     "@fortawesome/angular-fontawesome": "1.0.0",
     "@fortawesome/fontawesome-free": "6.7.2",
     "bootstrap": "4.3.1",
-    "ngex-dialog": "^19.0.3",
+    "ngex-dialog": "^19.0.4",
     "rxjs": "7.8.1",
     "tslib": "2.8.1",
     "zone.js": "0.15.0"
