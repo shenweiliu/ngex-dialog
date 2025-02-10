@@ -1,59 +1,21 @@
-# LibBuild
+# ngex-dialog
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.0.
+An advanced modal dialog service for applications with Angular versions 19 and standalone.
 
-## Development server
+## Installation
 
-To start a local development server, run:
+Run `npm install ngex-dialog` to add the library into your project directory, or add `"ngex-dialog": "~19.0.4"` to the package.json file and then run `npm install` to update the existing package.
 
-```bash
-ng serve
-```
+## Details and Use Cases
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+To see how to use the dialog in details, please go check out the article [An Angular Modal Dialog with Advanced Functionality and Easy-use Features](https://www.codeproject.com/Articles/1179258/An-Angular-Modal-Dialog-with-Advanced-Functionalit). The article is read-only on the site. Although the article is for legacy Angular versions, all use cases and operations of the ngex-dialog are the same.
 
-## Code scaffolding
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Demo Application
 
-```bash
-ng generate component component-name
-```
+The source code can be downloaded from the [github repository](https://github.com/shenweiliu/ngex-dialog).
+ 
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Notes on Styles
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+The *ex-dialog.css* file containing all base style settings for the dialog is not included in the installed library. You may need to have it under the *angular-sources_only/src/assets/css* folder from the [github repository](https://github.com/shenweiliu/ngex-dialog). The icon images for the basic-type dialogs can also be downloaded there.
