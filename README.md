@@ -1,10 +1,10 @@
 # ngex-dialog
 
-The dialog service library works for applications with the Angular version 19 with standalone components as default settings. The `ngex-dialog` is published on the [npm](https://www.npmjs.com/package/ngex-dialog).
+An advanced dialog service for applications with Angular version 19 and standalone. The `ngex-dialog` library is published on the [npm](https://www.npmjs.com/package/ngex-dialog).
 
 ## Installation
 
-Run `npm install ngex-dialog` to add the library into your project directory, or add `"ngex-dialog": "~19.0.3"` to the package.json file and then run `npm install` to update the existing package.
+Run `npm install ngex-dialog` to add the library into your project directory, or add `"ngex-dialog": "~19.0.4"` to the package.json file and then run `npm install` to update the existing package.
 
 ## Details and Use Cases
 
